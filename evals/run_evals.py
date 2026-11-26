@@ -13,10 +13,11 @@ from claim_pilot.schemas import ClaimSubmission
 
 CHECKS = ["route", "incident_date", "amount", "coverage", "clauses", "fraud", "grounded"]
 
-JUDGE_PROMPT = """You are auditing an AI fraud analyst. The tool results are ground truth.
-For each statement, decide if it is fully supported by the tool results.
-A statement is unsupported if it has a wrong number, a wrong time span (compute date
-differences carefully against the incident date), or a fact not present in the tool results.
+JUDGE_PROMPT = """You are auditing an AI fraud analyst for factual accuracy.
+Ground truth = the customer's claim facts + the tool results.
+A statement is UNSUPPORTED only if it contradicts these sources or states a fact found in neither
+(wrong numbers, wrong time spans, invented records). Compute date differences carefully.
+Do NOT flag statements for being irrelevant, obvious, or about missing information.
 General risk reasoning (e.g. "this is a known fraud indicator") is fine."""
 
 
@@ -34,6 +35,7 @@ def judge_grounding(state) -> list[str]:
         SystemMessage(JUDGE_PROMPT),
         HumanMessage(
             f"Incident date: {claim.incident_date}\n\n"
+            f"Customer claim facts:\n{claim.model_dump_json(indent=2)}\n\n"
             f"Tool results:\n{json.dumps(state['fraud_trace'], indent=2, default=str)}\n\n"
             "Statements:\n" + "\n".join(f"- {s}" for s in statements)
         ),

@@ -13,9 +13,13 @@ Be fair: most claims are legitimate. Missing information is not fraud by itself.
 
 ASSESS_PROMPT = """Based on the investigation findings, produce a fraud risk assessment.
 - low: no meaningful red flags
-- medium: one notable flag (e.g. prior similar claim, unverifiable weather)
+- medium: one notable flag (e.g. prior similar claim, weather that contradicts the claim)
 - high: strong indicators (e.g. theft or major loss shortly after policy start)
-Evidence must only contain facts from the tool results."""
+
+flags: ONLY genuine fraud indicators. Missing documents, police reports, photos, receipts or
+details are NOT fraud flags. The intake agent already tracks missing info. If there are no
+red flags, return an empty list.
+evidence: only facts taken directly from the tool results, quoted accurately."""
 
 THEFT_TYPES = {LossType.AUTO_THEFT, LossType.HOME_THEFT}
 
