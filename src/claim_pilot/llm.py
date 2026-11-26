@@ -4,4 +4,4 @@ from claim_pilot.config import MODEL
 
 def get_llm(temperature: float = 0):
     """One place to build the LLM so every agent uses the same model."""
-    return init_chat_model(MODEL, temperature=temperature)
+    return init_chat_model(MODEL, temperature=temperature, max_retries=6)

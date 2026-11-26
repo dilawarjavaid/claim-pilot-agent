@@ -1,3 +1,4 @@
+import time
 import sys, json, pathlib
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
@@ -20,7 +21,9 @@ for raw in claims:
         print(f"  - {r}")
 
     if "__interrupt__" in result:
-        action = input("  Adjuster decision [approve/deny/escalate]: ").strip().lower() or "approve"
+        action = ""
+        while action not in {"approve", "deny", "escalate"}:
+            action = input("  Adjuster decision [approve/deny/escalate]: ").strip().lower() or "approve"
         note = input("  Note: ").strip()
         result = graph.invoke(Command(resume={"action": action, "note": note}), config)
 
@@ -28,5 +31,6 @@ for raw in claims:
     expected = raw["expected_route"]
     correct += result["route"] == expected
     print(f"  Expected route: {expected} {'✅' if result['route'] == expected else '❌'}")
+    time.sleep(15)
 
 print(f"\nRouting accuracy: {correct}/{len(claims)}")
