@@ -1,0 +1,5 @@
+[
+  {"region": "Mississauga", "date": "2026-11-19", "event": "windstorm", "detail": "Wind gusts up to 95 km/h, widespread tree damage"},
+  {"region": "Toronto", "date": "2026-11-10", "event": "hail", "detail": "Hail up to 3 cm reported in north Toronto"},
+  {"region": "Brampton", "date": "2026-11-10", "event": "hail", "detail": "Hail up to 2 cm"}
+]

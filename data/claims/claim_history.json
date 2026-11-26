@@ -1,0 +1,8 @@
+{
+  "AUTO-1001": [],
+  "AUTO-1002": [],
+  "AUTO-1003": [{"claim_id": "OLD-341", "date": "2024-02-11", "loss_type": "auto_collision", "amount": 1900}],
+  "HOME-2001": [],
+  "HOME-2002": [{"claim_id": "OLD-778", "date": "2025-09-02", "loss_type": "home_theft", "amount": 6200}],
+  "HOME-2003": []
+}

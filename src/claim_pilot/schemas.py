@@ -61,3 +61,9 @@ class CoverageDecision(BaseModel):
     deductible: Optional[float] = Field(None, description="Deductible that applies, 0 if waived")
     reasoning: str = Field(description="2-3 sentences explaining the decision with reference to the clauses")
     concerns: list[str] = Field(default_factory=list, description="Sub-limits, possible exclusions, open questions")
+
+class FraudAssessment(BaseModel):
+    risk_level: Literal["low", "medium", "high"]
+    flags: list[str] = Field(default_factory=list, description="Specific red flags found")
+    evidence: list[str] = Field(default_factory=list, description="Facts returned by tools that support the assessment")
+    recommendation: str = Field(description="One sentence: what should happen next")
