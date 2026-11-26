@@ -1,0 +1,8 @@
+{
+  "CLM-001": {"route": "auto_approve", "incident_date": "2026-11-19", "amount": 2800,  "coverage": "covered", "clauses_any": ["A2"],       "fraud": "low"},
+  "CLM-002": {"route": "adjuster",     "incident_date": "skip",       "amount": null,  "coverage": "covered", "clauses_any": ["H2"],       "fraud": "low"},
+  "CLM-003": {"route": "investigate",  "incident_date": "2026-11-19", "amount": null,  "coverage": "covered", "clauses_any": ["A2", "A3"], "fraud": "high"},
+  "CLM-004": {"route": "adjuster",     "incident_date": "2026-11-14", "amount": 14000, "coverage": "partial", "clauses_any": ["H4"],       "fraud": "medium"},
+  "CLM-005": {"route": "adjuster",     "incident_date": "2026-11-22", "amount": null,  "coverage": "covered", "clauses_any": ["A1", "A6"], "fraud": "low"},
+  "CLM-006": {"route": "adjuster",     "incident_date": null,         "amount": null,  "coverage": "covered", "clauses_any": ["H3"],       "fraud": "low"}
+}

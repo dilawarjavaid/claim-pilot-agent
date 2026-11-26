@@ -20,9 +20,14 @@ def check_policy_age(policy_number: str, incident_date: str) -> dict:
 
 
 @tool
-def find_prior_claims(policy_number: str) -> dict:
-    """Return previous claims filed on this policy."""
-    claims = _history.get(policy_number, [])
+def find_prior_claims(policy_number: str, incident_date: str) -> dict:
+    """Return previous claims on this policy, with how many days before the
+    current incident (YYYY-MM-DD) each one happened."""
+    current = date.fromisoformat(incident_date)
+    claims = [
+        {**c, "days_before_incident": (current - date.fromisoformat(c["date"])).days}
+        for c in _history.get(policy_number, [])
+    ]
     return {"prior_claim_count": len(claims), "claims": claims}
 
 
