@@ -1,0 +1,8 @@
+{
+  "AUTO-1001": {"product": "auto_standard", "holder": "Sara Malik", "start_date": "2024-03-01", "deductible": 500},
+  "AUTO-1002": {"product": "auto_standard", "holder": "Jordan Lee", "start_date": "2026-11-16", "deductible": 500},
+  "AUTO-1003": {"product": "auto_standard", "holder": "Priya Nair", "start_date": "2022-09-01", "deductible": 500},
+  "HOME-2001": {"product": "home_standard", "holder": "Omar Sheikh", "start_date": "2023-06-15", "deductible": 1000},
+  "HOME-2002": {"product": "home_standard", "holder": "Emily Chen", "start_date": "2025-01-10", "deductible": 1000},
+  "HOME-2003": {"product": "home_standard", "holder": "Daniel Roy", "start_date": "2021-04-20", "deductible": 1000}
+}

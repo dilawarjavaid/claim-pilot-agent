@@ -1,6 +1,7 @@
 from datetime import date
 from enum import Enum
 from typing import Optional
+from typing import Literal, Optional
 from pydantic import BaseModel, Field
 
 
@@ -38,3 +39,25 @@ class ExtractedClaim(BaseModel):
         default_factory=list,
         description="Facts an adjuster needs that the customer did not provide",
     )
+
+class PolicyRecord(BaseModel):
+    policy_number: str
+    product: Literal["auto_standard", "home_standard"]
+    holder: str
+    start_date: date
+    deductible: float
+
+
+class CoverageStatus(str, Enum):
+    COVERED = "covered"
+    PARTIAL = "partial"
+    NOT_COVERED = "not_covered"
+    INSUFFICIENT_INFO = "insufficient_info"
+
+
+class CoverageDecision(BaseModel):
+    status: CoverageStatus
+    cited_clauses: list[str] = Field(description="Clause IDs relied on, e.g. ['A2', 'A5']")
+    deductible: Optional[float] = Field(None, description="Deductible that applies, 0 if waived")
+    reasoning: str = Field(description="2-3 sentences explaining the decision with reference to the clauses")
+    concerns: list[str] = Field(default_factory=list, description="Sub-limits, possible exclusions, open questions")
