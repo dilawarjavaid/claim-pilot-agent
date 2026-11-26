@@ -1,0 +1,11 @@
+langgraph
+langchain
+langchain-openai
+langchain-groq
+langchain-chroma
+pydantic
+python-dotenv
+fastapi
+uvicorn
+streamlit
+pytest
