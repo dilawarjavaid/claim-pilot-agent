@@ -1,0 +1,44 @@
+[
+  {
+    "claim_id": "CLM-001",
+    "policy_number": "AUTO-1001",
+    "submitted_on": "2026-11-20",
+    "description": "Yesterday a big tree branch fell on my Honda Civic during the windstorm while it was parked outside my house in Mississauga. Windshield cracked and roof dented. Body shop quoted about $2,800.",
+    "expected_route": "auto_approve"
+  },
+  {
+    "claim_id": "CLM-002",
+    "policy_number": "HOME-2001",
+    "submitted_on": "2026-11-18",
+    "description": "Pipe burst under the kitchen sink last week, water everywhere. Cabinets and hardwood floor are ruined. Not sure on cost yet.",
+    "expected_route": "adjuster"
+  },
+  {
+    "claim_id": "CLM-003",
+    "policy_number": "AUTO-1002",
+    "submitted_on": "2026-11-21",
+    "description": "My car was stolen from the mall parking lot on Nov 19. It was a 2024 Toyota RAV4. I reported it to police, report #TPS-55821. I bought the policy 5 days ago.",
+    "expected_route": "investigate"
+  },
+  {
+    "claim_id": "CLM-004",
+    "policy_number": "HOME-2002",
+    "submitted_on": "2026-11-15",
+    "description": "Someone broke into my apartment on Nov 14 and took my laptop, a TV, and jewellery worth roughly $14,000 total. Police came and filed a report.",
+    "expected_route": "adjuster"
+  },
+  {
+    "claim_id": "CLM-005",
+    "policy_number": "AUTO-1003",
+    "submitted_on": "2026-11-22",
+    "description": "Rear-ended at a red light on Highway 7 this morning. The other driver admitted fault. My neck is sore and I'm going to see a doctor. Bumper is smashed.",
+    "expected_route": "adjuster"
+  },
+  {
+    "claim_id": "CLM-006",
+    "policy_number": "HOME-2003",
+    "submitted_on": "2026-11-23",
+    "description": "Hail cracked two skylights.",
+    "expected_route": "adjuster"
+  }
+]
